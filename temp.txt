@@ -1,0 +1,7 @@
+function names 
+
+getHumanChoice(used for taking human input)
+getComputerChoice(used for taking computer input)
+humanScore
+computerScore
+playRound
