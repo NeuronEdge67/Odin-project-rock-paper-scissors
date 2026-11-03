@@ -10,6 +10,7 @@ function getHumanChoice(){
 function getComputerChoice(){
     const options = ["rock", "paper", 'scissors'];
     const random_choice = Math.floor(Math.random() * options.length);
-    return random_choice;
+    return options[random_choice];
 }
 
+console.log(getComputerChoice());
