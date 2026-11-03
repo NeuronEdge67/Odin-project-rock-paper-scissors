@@ -16,3 +16,21 @@ function getComputerChoice(){
     return options[random_choice];
 }
 
+// human score function
+
+function humanScore(score){
+    
+}
+
+function computerScore(score){
+
+}
+
+function playRound(){
+    const human = getHumanChoice();
+    const computer = getComputerChoice();
+
+    if (human === "rock"
+}
+
+console.log(playRound());
