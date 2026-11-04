@@ -19,18 +19,43 @@ function getComputerChoice(){
 // human score function
 
 function humanScore(score){
-    
+    total_score = 0
+    total_score += score
+    return total_score
 }
 
 function computerScore(score){
-
+    total_score = 0
+    total_score += score
+    return total_score
 }
 
 function playRound(){
     const human = getHumanChoice();
     const computer = getComputerChoice();
-
-    if (human === "rock"
+    // Possible outcomes:
+    // "rock", "paper", "scissors":
+    // Human         computer
+    // "rock"         "rock"
+    // "rock"         "paper"
+    // "rock"         "scissors"
+    // "paper"        "rock"
+    // "paper"        "paper"
+    // "paper"        "scissors"
+    // "scissors"     "rock"
+    // "scissors"     "paper"
+    // "scissors"     "scissors"
+    if (human === "rock"){
+        switch (computer){
+            case "rock":
+                return `OOPS Draw. You choosed "${human}" and Computer choosed the same "${computer}" `;
+                break;
+            case "paper":
+                return `Computer Wins. You choosed "${human}" and Computer choosed the same "${computer}" `;
+                break;
+        }
+    }
+    else if ()
 }
 
 console.log(playRound());
