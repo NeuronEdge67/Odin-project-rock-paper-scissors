@@ -48,7 +48,8 @@ function playRound(human, computer){
             case "rock":
                 return `OOPS Draw. You choosed "${human}" and Computer choosed the same "${computer}"`;
             case "paper":
-                return `Computer Wins. You choosed "${human}" and Computer choosed "${computer}"`;
+                return `Computer Wins. You choosed "${human}" and Computer choosed 
+                "${computer}"`;
             case "scissors":
                 return `You Win. You choosed "${human}" and Computer choosed "${computer}"`;
         }
@@ -74,7 +75,7 @@ function playRound(human, computer){
         }
     }
     else{
-        return `Enter a valid choice "rock" | "paper" | "scissors". ${human} is not a valid choice.`
+        return `Enter a valid choice "rock" | "paper" | "scissors". "${human}" is not a valid choice.`
     }
 }
 
