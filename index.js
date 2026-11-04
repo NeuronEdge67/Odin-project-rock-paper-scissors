@@ -36,26 +36,48 @@ function playRound(){
     // Possible outcomes:
     // "rock", "paper", "scissors":
     // Human         computer
-    // "rock"         "rock"
-    // "rock"         "paper"
-    // "rock"         "scissors"
-    // "paper"        "rock"
-    // "paper"        "paper"
-    // "paper"        "scissors"
-    // "scissors"     "rock"
-    // "scissors"     "paper"
-    // "scissors"     "scissors"
+    // "rock"         "rock"  --> Draw
+    // "rock"         "paper" --> Computer
+    // "rock"         "scissors" --> You
+    // "paper"        "rock" --> You
+    // "paper"        "paper" --> Draw
+    // "paper"        "scissors" --> Computer
+    // "scissors"     "rock" --> Computer
+    // "scissors"     "paper" --> You
+    // "scissors"     "scissors" --> Draw
     if (human === "rock"){
         switch (computer){
             case "rock":
-                return `OOPS Draw. You choosed "${human}" and Computer choosed the same "${computer}" `;
-                break;
+                return `OOPS Draw. You choosed "${human}" and Computer choosed the same "${computer}"`;
             case "paper":
-                return `Computer Wins. You choosed "${human}" and Computer choosed the same "${computer}" `;
-                break;
+                return `Computer Wins. You choosed "${human}" and Computer choosed the same "${computer}"`;
+            case "scissors":
+                return `You Win. You choosed "${human}" and Computer choosed the same "${computer}"`;
         }
     }
-    else if ()
+    else if (human === "paper"){
+        switch (computer){
+            case "rock":
+                return `You Win. You choosed "${human}" and Computer choosed the same "${computer}"`;
+            case "paper":
+                return `OOPS Draw. You choosed "${human}" and Computer choosed the same "${computer}"`;
+            case "scissors":
+                return `Computer Wins. You choosed "${human}" and Computer choosed the same "${computer}"`;
+        }
+    }
+    else if (human === "scissors"){
+        switch (computer){
+            case "rock":
+                return `Computer Wins. You choosed "${human}" and Computer choosed the same "${computer}"`;
+            case "paper":
+                return `You Win. You choosed "${human}" and Computer choosed the same "${computer}"`;
+            case "scissors":
+                return `OOPS Draw. You choosed "${human}" and Computer choosed the same "${computer}"`;
+        }
+    }
+    else{
+        return `Enter a valid choice "rock" | "paper" | "scissors". ${human} is not a valid choice.`
+    }
 }
 
 console.log(playRound());
