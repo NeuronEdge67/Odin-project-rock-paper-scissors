@@ -1,4 +1,5 @@
 // Greeting
+alert("Wlcm to Rock Paper Scissors Game");
 console.log("-----Wlcm to Rock Paper Scissors Game-----");
 
 // creating a function that takes human input
@@ -26,9 +27,6 @@ function computerScore(score){
     
 }
 
-// saving human and computer choices on variable name human_choice & computer_choice respectively.
-const human_choice = getHumanChoice();
-const computer_choice = getComputerChoice();
 
 function playRound(human, computer){
     // Possible outcomes:
@@ -79,4 +77,14 @@ function playRound(human, computer){
     }
 }
 
-console.log(playRound(human=human_choice, computer=computer_choice));
+// Playing the game for 5 rounds
+let i = 0;
+while (i < 5) {
+    // saving human and computer choices on variable name human_choice & computer_choice respectively.
+    const human_choice = getHumanChoice();
+    const computer_choice = getComputerChoice();
+    console.log(playRound(human_choice, computer_choice));
+    if (human_choice !== computer_choice){
+        i++;
+    }
+}
