@@ -1,7 +1,0 @@
-function names 
-
-getHumanChoice(used for taking human input) "done"
-getComputerChoice(used for taking computer input) "done"
-humanScore
-computerScore
-playRound "done"
