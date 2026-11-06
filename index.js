@@ -17,16 +17,9 @@ function getComputerChoice(){
     return options[random_choice];
 }
 
-// human score function
-function humanScore(score){
-    
-}
-
-// computer score function
-function computerScore(score){
-    
-}
-
+// Defining two variables humanScore and computahScore
+let humanScore = 0;
+let computahScore = 0; //🫦
 
 function playRound(human, computer){
     // Possible outcomes:
@@ -46,27 +39,32 @@ function playRound(human, computer){
             case "rock":
                 return `OOPS Draw. You choosed "${human}" and Computer choosed the same "${computer}"`;
             case "paper":
-                return `Computer Wins. You choosed "${human}" and Computer choosed 
-                "${computer}"`;
+                computahScore++;
+                return `Computer Wins. You choosed "${human}" and Computer choosed "${computer}"`;
             case "scissors":
+                humanScore++
                 return `You Win. You choosed "${human}" and Computer choosed "${computer}"`;
         }
     }
     else if (human === "paper"){
         switch (computer){
             case "rock":
+                humanScore++;
                 return `You Win. You choosed "${human}" and Computer choosed "${computer}"`;
             case "paper":
                 return `OOPS Draw. You choosed "${human}" and Computer choosed the same "${computer}"`;
             case "scissors":
+                computahScore++;
                 return `Computer Wins. You choosed "${human}" and Computer choosed "${computer}"`;
         }
     }
     else if (human === "scissors"){
         switch (computer){
             case "rock":
+                computahScore++;
                 return `Computer Wins. You choosed "${human}" and Computer choosed "${computer}"`;
             case "paper":
+                humanScore++;
                 return `You Win. You choosed "${human}" and Computer choosed "${computer}"`;
             case "scissors":
                 return `OOPS Draw. You choosed "${human}" and Computer choosed the same "${computer}"`;
@@ -81,10 +79,14 @@ function playRound(human, computer){
 let i = 0;
 while (i < 5) {
     // saving human and computer choices on variable name human_choice & computer_choice respectively.
-    const human_choice = getHumanChoice();
-    const computer_choice = getComputerChoice();
+    let human_choice = getHumanChoice();
+    let computer_choice = getComputerChoice();
     console.log(playRound(human_choice, computer_choice));
-    if (human_choice !== computer_choice){
+    if (human_choice !== computer_choice && (human_choice === "rock") || (human_choice === "paper") || (human_choice === "scissors")){
         i++;
     }
+    
 }
+console.log("-----Final Score-----");
+console.log(`Your Total Score = "${humanScore}"`);
+console.log(`Computer Total Score = "${computahScore}"`);
